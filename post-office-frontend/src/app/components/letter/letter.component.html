@@ -1,1 +1,54 @@
-<p>letter works!</p>
+<div class="my-5 mx-10">
+  <div class="row">
+    <div class="col-sm" style="text-align: center">
+      <h2><b>Kolejka</b></h2>
+      <ul class="list-group-item">
+        <li class="list-group-item hover">
+          <div class="row">
+            <div class="col-sm">
+              <b>Nadany numer</b>
+            </div>
+            <div class="col-sm">
+              <b>Pseudonim</b>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item hover" *ngFor="let item of allLetters">
+          <div class="row">
+            <div class="col-sm">
+              {{ item.uniqueId }}
+            </div>
+            <div class="col-sm">
+              {{ item.name }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm" style="text-align: center">
+      <h2><b>Bez kolejki</b></h2>
+      <ul class="list-group-item">
+        <li class="list-group-item hover">
+          <div class="row">
+            <div class="col-sm">
+              <b>Nadany numer</b>
+            </div>
+            <div class="col-sm">
+              <b>Pseudonim</b>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item hover" *ngFor="let item of allInstantLetters">
+          <div class="row">
+            <div class="col-sm">
+              {{ item.uniqueId }}
+            </div>
+            <div class="col-sm">
+              {{ item.name }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

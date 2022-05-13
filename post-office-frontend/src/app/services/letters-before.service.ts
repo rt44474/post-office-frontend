@@ -7,7 +7,7 @@ import { LetterModel } from '../models/LetterModel';
 @Injectable({
   providedIn: 'root',
 })
-export class LetterService {
+export class LettersBeforeService {
   private refreshNeeded = new Subject<void>();
 
   get getRefreshNeeded() {
@@ -16,17 +16,15 @@ export class LetterService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllLettersSorted(): Observable<LetterModel[]> {
+  getAllLettersBefore(uniqueId: string): Observable<LetterModel[]> {
     return this.httpClient.get<LetterModel[]>(
-      `${environment.apiUrl}/letter/sorted`
+      `${environment.apiUrl}/letter/uID/${uniqueId}`
     );
   }
 
-  getAllInstant(): Observable<LetterModel[]> {
+  getAllLettersBeforeName(name: string): Observable<LetterModel[]> {
     return this.httpClient.get<LetterModel[]>(
-      `${environment.apiUrl}/letter/instant`
+      `${environment.apiUrl}/letter/name/${name}`
     );
   }
-
-
 }

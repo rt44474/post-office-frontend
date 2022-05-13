@@ -1,2 +1,41 @@
+<div class="page d-flex">
+  <div class="left-panel" #left_panel>
+    <nav class="nav flex-column">
+      <div class="logo-wrapper align-self-left">
+        <img class="nbr-logo" src="assets/logo.svg" />
+      </div>
+      <div>
+        <a
+          class="nav-item nav-link navBar-btn"
+          routerLink="/{{ appRoutes.HOME }}"
+          routerLinkActive="active"
+          ><fa-icon [icon]="faPG" class="navBar-btn-icon"></fa-icon> Kolejka</a
+        >
+      </div>
+      <div>
+        <a
+          class="nav-item nav-link navBar-btn"
+          routerLink="/{{ appRoutes.USERS_BEFORE }}"
+          routerLinkActive="active"
+          ><fa-icon [icon]="faUC" class="navBar-btn-icon"></fa-icon> Sprawdź czas <br>oczekiwania</a
+        >
+      </div>
+      <div>
+        <a
+          class="nav-item nav-link navBar-btn"
+          routerLink="/{{ appRoutes.REGISTER_LETTER }}"
+          routerLinkActive="active"
+          ><fa-icon [icon]="faE" class="navBar-btn-icon"></fa-icon> Rejestrator</a
+        >
+      </div>
+    </nav>
+  </div>
 
-<router-outlet></router-outlet>
+  <div class="right-panel">
+    <div class="page-content-wrapper">
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

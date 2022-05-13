@@ -1,0 +1,71 @@
+<div class="my-5 mx-10">
+  <div class="row">
+    <div class="col-sm" style="text-align: center">
+      <h2>
+        <b>Kolejka</b>
+      </h2>
+      <div class="row">
+        <div class="col-sm">
+          <input
+            type="text"
+            placeholder="Numer"
+            id="uniqueId"
+            [(ngModel)]="uniqueId"
+          />
+          <button
+            type="button"
+            class="btn"
+            style="background-color: #56baed; color: white"
+            (click)="getAllBeforeUniqueId(uniqueId)"
+          >
+            Szukaj za pomocą numeru
+          </button>
+        </div>
+        <div class="col-sm">
+          <input
+            type="text"
+            placeholder="Pseudonim"
+            id="name"
+            [(ngModel)]="name"
+          />
+          <button
+            type="button"
+            class="btn"
+            style="background-color: #56baed; color: white"
+            (click)="getAllBeforeName(name)"
+          >
+            Szukaj za pomocą pseudonimu
+          </button>
+        </div>
+      </div>
+      <ul class="list-group-item">
+        <li class="list-group-item hover">
+          <div class="row">
+            <div class="col-sm">
+              <b>Nadany numer</b>
+            </div>
+            <div class="col-sm">
+              <b>Pseudonim</b>
+            </div>
+            <div class="col-sm">
+              <b>Czas oczekiwania</b>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item hover" *ngFor="let item of allLetters">
+          <div class="row">
+            <div class="col-sm">
+              {{ item.uniqueId }}
+            </div>
+            <div class="col-sm">
+              {{ item.name }}
+            </div>
+            <div class="col-sm">
+              {{ item.time }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

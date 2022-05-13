@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import "../../node_modules/flag-icon-css/css/flag-icons.css";
+
+* {
+  font-family: "Inter";
+}
+
+.left-panel {
+  width: 10vw;
+  min-width: 220px;
+  border-right: 1px #e5e7eb solid;
+  display: table-cell;
+}
+
+.right-panel {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: table;
+}
+
+.navBar {
+  border-right: 1px #e5e7eb solid;
+  height: 100%;
+  padding-top: 2em;
+  width: 10%;
+}
+
+.nav {
+  padding: 1em;
+}
+
+.top-bar {
+  border-bottom: 1px #e5e7eb solid;
+  height: 5vh;
+  min-height: 50px;
+  max-height: 50px;
+  align-content: center;
+}
+
+.page-content-wrapper {
+  padding: 3em;
+  width: 100%;
+  float: right;
+}
+
+.page-content {
+  background-color: white;
+  padding: 1em;
+  min-height: 80vh;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba($color: #000000, $alpha: 0.1);
+  float: right;
+}
+
+.content-btn {
+  color: white;
+  background-color: #15a269;
+}
+
+.navBar-btn-wrapper {
+  margin-bottom: 5px;
+}
+
+.navBar-btn-wrapper :hover {
+  color: #374151;
+  background-color: rgba($color: #15a269, $alpha: 0.1);
+  border-radius: 5px;
+}
+
+.navBar-btn {
+  color: #374151;
+  font-weight: bold;
+}
+
+.logout-btn :hover {
+  background-color: rgba($color: #d44a4a, $alpha: 0.1);
+}
+
+.nbr-logo {
+  max-width: 100%;
+  max-height: 10vh;
+  min-width: 150px;
+  min-height: 60px;
+}
+
+.logo-wrapper {
+  padding: 1.5em;
+}
+
+.navBar-btn,
+.navBar-btn-icon {
+  font-size: 2vh;
+}

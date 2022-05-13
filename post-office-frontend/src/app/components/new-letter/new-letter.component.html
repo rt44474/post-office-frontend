@@ -1,1 +1,47 @@
-<p>new-letter works!</p>
+<div class="my-5 mx-10">
+  <div class="col-sm" style="text-align: center">
+    <h2>
+      <b>Rejestrator</b>
+    </h2>
+  </div>
+
+  <form #form='ngForm' (ngSubmit)='newLetter(name, pin)'>
+    <div class="row">
+
+        <div class="col-sm">
+          <section>
+            <label for="name" style="display: block; margin-bottom: 0;text-align: center;">Pseudonim</label>
+            <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Pseudonim" style="margin-top: 0; " required>
+          </section>
+        </div>
+        <div class="col-sm">
+            <label for="status" style="display: block; margin-bottom: 0;text-align: center;">Status</label>
+            <div id="status" ngbDropdown class="drop-down-wrapper dropstyle"style="margin-top: 0;" aria-required="false">
+                <div class="drop-down-header-alt large-dropdown" name="chosenStatus" ngDefaultControl ngbDropdownToggle [(ngModel)]="chosenStatus"><i class="fas fa-filter"></i>{{chosenStatus}}</div>
+                <div ngbDropdownMenu class="drop-down-list large-dropdown">
+                    <div ngbDropdownItem class="drop-down-element large-dropdown" (click)="chooseStatus(item)" *ngFor="let item of status">{{item}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <label for="pin" style="display: block; margin-bottom: 0; text-align: center;">Pin</label>
+            <input type="text" id="pin" name="pin" [(ngModel)]="pin" placeholder="Pin" style="margin-top: 0; " [disabled]="chosenStatus === 'Status'">
+        </div>
+    </div>
+
+    <input type="submit"  [disabled]="form.invalid" value="Rejestruj">
+  </form>
+  <div class="row">
+      <div class="col-sm">
+        <div *ngIf = "letter.id !== undefined">
+            <h2><b>Twój numer:</b></h2> {{letter.uniqueId}}
+          </div>
+      </div>
+      <div class="col-sm">
+
+      </div>
+  </div>
+
+
+
+</div>
