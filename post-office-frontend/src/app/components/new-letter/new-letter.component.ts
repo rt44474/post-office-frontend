@@ -29,7 +29,11 @@ export class NewLetterComponent implements OnInit {
       } else {
         await this.NewLetterSerivce.sendLetter(name, pin)
           .then((response) => {
-            this.letter = response;
+            if (response === null){
+              alert('Pseudonim zajęty!');
+            }else {
+              this.letter = response;
+            }
           })
           .catch((e) => {
             alert('Wystąpił błąd');
@@ -41,7 +45,11 @@ export class NewLetterComponent implements OnInit {
       } else {
         await this.NewLetterSerivce.sendLetter(name, pin)
           .then((response) => {
-            this.letter = response;
+            if (response === null){
+              alert('Pseudonim zajęty!');
+            }else {
+              this.letter = response;
+            }
           })
           .catch((e) => {
             alert('Wystąpił błąd');
@@ -50,7 +58,11 @@ export class NewLetterComponent implements OnInit {
     } else {
       await this.NewLetterSerivce.sendLetter(name, pin)
         .then((response) => {
-          this.letter = response;
+          if (response === null){
+            alert('Pseudonim zajęty!');
+          }else {
+            this.letter = response;
+          }
         })
         .catch((e) => {
           alert('Wystąpił błąd');
