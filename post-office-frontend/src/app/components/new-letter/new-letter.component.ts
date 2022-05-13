@@ -18,8 +18,8 @@ export class NewLetterComponent implements OnInit {
   ngOnInit(): void {}
 
   async newLetter(name: string, pin: string) {
-    console.log(this.chosenStatus);
-    console.log(pin);
+    //console.log(this.chosenStatus);
+    //console.log(pin);
     if (pin === '') {
       pin = '0';
     }

@@ -23,12 +23,16 @@ export class LettersBeforeComponent implements OnInit {
     this.LetterService.getAllLettersBefore(uniqueId).subscribe(
       (response) => {
         this.allLetters = response;
-        this.intervalIdUnique = setInterval(() => {
-          this.getAllBeforeUniqueId(this.uniqueId);
-        }, 5000);
+        if (this.intervalIdUnique === null){
+          this.intervalIdUnique = setInterval(() => {
+            this.getAllBeforeUniqueId(this.uniqueId);
+          }, 5000);
+          //console.log("INTERWAŁ START: ",this.intervalIdUnique," ",Number(this.intervalIdUnique));
+        }
       },
       (error) => {
         this.allLetters = [];
+        //console.log("INTERWAŁ STOP: ",this.intervalIdUnique," ",Number(this.intervalIdUnique));
         clearInterval(Number(this.intervalIdUnique));
       }
     );
@@ -41,6 +45,7 @@ export class LettersBeforeComponent implements OnInit {
         this.intervalIdName = setInterval(() => {
           this.getAllBeforeName(this.uniqueId);
         }, 5000);
+
       },
       (error) => {
         this.allLetters = [];
