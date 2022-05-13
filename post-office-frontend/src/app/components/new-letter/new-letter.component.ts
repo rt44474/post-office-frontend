@@ -29,9 +29,9 @@ export class NewLetterComponent implements OnInit {
       } else {
         await this.NewLetterSerivce.sendLetter(name, pin)
           .then((response) => {
-            if (response === null){
+            if (response === null) {
               alert('Pseudonim zajęty!');
-            }else {
+            } else {
               this.letter = response;
             }
           })
@@ -45,9 +45,9 @@ export class NewLetterComponent implements OnInit {
       } else {
         await this.NewLetterSerivce.sendLetter(name, pin)
           .then((response) => {
-            if (response === null){
+            if (response === null) {
               alert('Pseudonim zajęty!');
-            }else {
+            } else {
               this.letter = response;
             }
           })
@@ -58,9 +58,9 @@ export class NewLetterComponent implements OnInit {
     } else {
       await this.NewLetterSerivce.sendLetter(name, pin)
         .then((response) => {
-          if (response === null){
+          if (response === null) {
             alert('Pseudonim zajęty!');
-          }else {
+          } else {
             this.letter = response;
           }
         })

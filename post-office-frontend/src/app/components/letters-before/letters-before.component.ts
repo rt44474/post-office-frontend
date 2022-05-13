@@ -22,17 +22,20 @@ export class LettersBeforeComponent implements OnInit {
     let intervalId;
     this.LetterService.getAllLettersBefore(uniqueId).subscribe(
       (response) => {
-        this.allLetters = response;
-        if (this.intervalIdUnique === null){
-          this.intervalIdUnique = setInterval(() => {
-            this.getAllBeforeUniqueId(this.uniqueId);
-          }, 5000);
-          //console.log("INTERWAŁ START: ",this.intervalIdUnique," ",Number(this.intervalIdUnique));
+        if (response === null) {
+          this.allLetters = [];
+          clearInterval(Number(this.intervalIdUnique));
+        } else {
+          this.allLetters = response;
+          if (this.intervalIdUnique === null) {
+            this.intervalIdUnique = setInterval(() => {
+              this.getAllBeforeUniqueId(this.uniqueId);
+            }, 5000);
+          }
         }
       },
       (error) => {
         this.allLetters = [];
-        //console.log("INTERWAŁ STOP: ",this.intervalIdUnique," ",Number(this.intervalIdUnique));
         clearInterval(Number(this.intervalIdUnique));
       }
     );
@@ -41,11 +44,17 @@ export class LettersBeforeComponent implements OnInit {
   getAllBeforeName(name: string) {
     this.LetterService.getAllLettersBeforeName(name).subscribe(
       (response) => {
-        this.allLetters = response;
-        this.intervalIdName = setInterval(() => {
-          this.getAllBeforeName(this.uniqueId);
-        }, 5000);
-
+        if (response === null) {
+          this.allLetters = [];
+          clearInterval(Number(this.intervalIdName));
+        } else {
+          this.allLetters = response;
+          if (this.intervalIdName === null) {
+            this.intervalIdName = setInterval(() => {
+              this.getAllBeforeName(this.name);
+            }, 5000);
+          }
+        }
       },
       (error) => {
         this.allLetters = [];
