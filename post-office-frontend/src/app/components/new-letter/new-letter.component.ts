@@ -11,8 +11,8 @@ export class NewLetterComponent implements OnInit {
   name: string = '';
   pin: string = '';
   letter: LetterModel = new LetterModel();
-  status: string[] = ['VIP', 'Nagły'];
-  chosenStatus: string = 'Status';
+  status: string[] = ['VIP', 'Nagły', 'Normalny'];
+  chosenStatus: string = 'Normalny';
   constructor(private NewLetterSerivce: NewLetterService) {}
 
   ngOnInit(): void {}
@@ -56,7 +56,7 @@ export class NewLetterComponent implements OnInit {
           });
       }
     } else {
-      await this.NewLetterSerivce.sendLetter(name, pin)
+      await this.NewLetterSerivce.sendLetter(name, '')
         .then((response) => {
           if (response === null) {
             alert('Pseudonim zajęty!');
